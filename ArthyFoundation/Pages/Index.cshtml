@@ -1,0 +1,194 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home - Save the Needy";
+    bool isAdmin = HttpContext.Session.GetString("IsAdmin") == "true";
+}
+
+<!-- Hero Section with Reverted Single Static Collage (Animations Preserved) -->
+<section class="hero-section text-white d-flex align-items-center">
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="display-6 playfair font-weight-500 leading-tight">Empowering Communities. Transforming Lives.</h3>
+                <h3 class="lead text-light-gray my-4">For their Smile. For their Dreams. For their Tomorrow</h3>
+                <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                    <a href="/Needs" class="btn btn-coral btn-lg px-4 py-3 rounded-pill text-white shadow hover-up">
+                        <i class="fa-solid fa-heart me-2"></i> Join Our Mission
+                    </a>
+                    <a href="#about" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill hover-up">
+                        <i class="fa-solid fa-arrow-down me-2"></i> Explore Initiatives
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 position-relative text-center">
+                <!-- Circular/Heart collage wrapper imitating the official brochure collage -->
+                <div class="collage-container mx-auto">
+                    <img src="~/images/hero-collage.jpg" alt="Arthy Foundation Group Collage" class="img-fluid rounded shadow-lg border-white-accent border-5 animate-float" onerror="this.src='https://placehold.co/600x450/1e5e3a/ffffff?text=Arthy+Foundation+Outreach'" />
+                    <div class="floating-badge bg-emerald text-white p-3 shadow rounded-circle d-none d-md-block">
+                        <span class="fs-4 block font-weight-700 text-accent">100%</span>
+                        <small class="block fs-7 text-uppercase">Transparent</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section-padding bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="~/images/emergency-aid.jpg" alt="Emergency Aid Activities" class="img-fluid rounded shadow-md border-coral border-4" onerror="this.src='https://placehold.co/600x400/1e5e3a/ffffff?text=Grassroots+Aid+Efforts'" />
+                <p class="caption-text text-center text-muted font-italic mt-2">Communal solidarity: neighborhood gatherings showing received essential aids and kits.</p>
+            </div>
+            <div class="col-lg-6">
+                <h5 class="text-coral text-uppercase font-weight-600 mb-2">Who We Are</h5>
+                <h2 class="section-title playfair font-weight-700 text-dark-green">"Your Kindness Is Their Hope"</h2>
+                <hr class="title-divider mb-4" />
+                <p class="body-text text-secondary mb-4">
+                    Arthy Foundation is a dedicated non-governmental organisation (NGO) committed to uplifting the underprivileged and marginalised sections of society. Our focus areas include child care, elder care, welfare for physically challenged individuals, and the development of tribal communities.
+                </p>
+                <div class="card border-0 shadow-sm bg-emerald-light p-4 mb-4">
+                    <h5 class="text-emerald font-weight-600 mb-2"><i class="fa-solid fa-eye me-2"></i> Our Vision</h5>
+                    <p class="body-text text-secondary mb-0">To build an inclusive and compassionate society where children, elderly individuals, physically challenged persons, and tribal communities are empowered with opportunities to lead a dignified life.</p>
+                </div>
+                <div class="card border-0 shadow-sm bg-coral-light p-4 mb-4">
+                    <h5 class="text-coral font-weight-600 mb-2"><i class="fa-solid fa-eye me-2"></i> Our Mission</h5>
+                    <p class="body-text text-secondary mb-0">We Strive To Bring Hope And Dignity To The Most Vulnerable—children, Elderly, Differently-abled, Tribal, And Single-parent Families. Through Shelter, Healthcare, Education, And Livelihood Opportunities, We Empower Lives And Build Stronger Communities. Together, We Create A Society Rooted In Care, Inclusion, And Compassion.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Campaigns Section (Action Triggers Redirecting to /Needs) -->
+<section id="causes" class="section-padding bg-white">
+    <div class="container">
+        <div class="text-center max-w-700 mx-auto mb-5">
+            <h5 class="text-coral text-uppercase font-weight-600 mb-2">Always-On Support Programs</h5>
+            <h2 class="section-title playfair font-weight-700 text-dark-green">Fulfill Essential Community Needs</h2>
+            <p class="body-text text-muted">Every child, elderly person, and family deserves access to learning, nutrition, and dignity. Explore our essential service areas and sponsor specific items directly.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Campaign 1: Child Care -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/shiksha-education.jpg" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Child Care Support" onerror="this.src='https://placehold.co/400x250/1e5e3a/ffffff?text=Child+Care+Support'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Child Care</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title playfair font-weight-700 text-dark-green mb-2">Child Care</h4>
+                            <p class="card-text text-muted font-size-14 mb-4">EduKits, school uniforms, shoes, and bicycles for underprivileged children.</p>
+                        </div>
+                        <a href="/Needs?cause=ChildCare" class="btn btn-emerald text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                            <i class="fa-solid fa-graduation-cap me-2"></i> Sponsor A Child's Need
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campaign 2: Food Donation -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/aahar-hunger.jpg" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Community Food Donation" onerror="this.src='https://placehold.co/400x250/1e5e3a/ffffff?text=Food+Donation+Program'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Food Relief</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title playfair font-weight-700 text-dark-green mb-2">Food Service</h4>
+                            <p class="card-text text-muted font-size-14 mb-4">Daily evening nutrition and special day meal distribution for hungry families.</p>
+                        </div>
+                        <a href="/Needs?cause=FoodDonation" class="btn btn-emerald text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                            <i class="fa-solid fa-bowl-food me-2"></i> Provide Wholesome Meals
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campaign 3: Community Development -->
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/sahaara-shelter.jpg" class="card-img-top" style="height: 220px; object-fit: cover;" alt="Community Development" onerror="this.src='https://placehold.co/400x250/1e5e3a/ffffff?text=Community+Development'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Community Reforming</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h4 class="card-title playfair font-weight-700 text-dark-green mb-2">Community Development</h4>
+                            <p class="card-text text-muted font-size-14 mb-4">Rice support, tarpaulins, solar lights, hut renovation, and tribal classes.</p>
+                        </div>
+                        <a href="/Needs?cause=CommunityDevelopment" class="btn btn-emerald text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                            <i class="fa-solid fa-hand-holding-heart me-2"></i> Fulfill Essential Needs
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Big Banner Button Leading to All 5 Services -->
+        <div class="text-center mt-5">
+            <a href="/Needs" class="btn btn-coral btn-lg text-white rounded-pill px-5 py-3 shadow-md hover-up font-weight-600">
+                <i class="fa-solid fa-heart-pulse me-2"></i> Explore All 5 Always-On Support Programs
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Weekly Priorities Section (Hosting the New Generated Chart & CMS) -->
+<section id="priorities" class="section-padding bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <span class="badge bg-coral text-white px-3 py-2 rounded-pill mb-3 tracking-widest text-uppercase">Weekly Tracker</span>
+                <h2 class="section-title playfair font-weight-700 text-dark-green mb-4">Weekly Priorities & Resource Allocation</h2>
+                <p class="body-text text-secondary mb-4">
+                    Our dynamic tracking system highlights the current weekly requirements of Arthy Foundation across child nutrition, tribal settlement survival, and education. To remain transparent, this list updates every Friday afternoon.
+                </p>
+                <p class="body-text text-secondary mb-4">
+                    If you are an administrator, you can log in below to upload an updated requirements chart directly and notify our donors of critical gaps.
+                </p>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="/Needs" class="btn btn-coral text-white rounded-pill px-4 py-2 hover-up shadow-sm">
+                        <i class="fa-solid fa-cart-shopping me-2"></i> Fill Critical Needs
+                    </a>
+
+                    @if (isAdmin)
+                    {
+                        <div class="badge bg-emerald-light border border-emerald text-emerald p-2 d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-unlock"></i> Admin Logged In
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-lg-7 text-center">
+                <div class="card border-0 p-3 shadow-md rounded-lg bg-white position-relative">
+                    <!-- Dynamic chart rendering the generated priorities chart -->
+                    <img id="priorityChart" src="~/images/weekly-priorities-chart.png" alt="Weekly priorities chart" class="img-fluid rounded" onerror="this.src='/images/services.png'" />
+                    <p class="caption-text text-center text-muted font-italic mt-2 mb-0">Priority items gap metric. Real-time fulfillment indicator generated for Arthy Foundation.</p>
+
+                    @if (isAdmin)
+                    {
+                        <!-- Admin Control Overwrite Panel (Upload Form) -->
+                        <div class="admin-overwrite-panel mt-3 p-3 bg-light border-dashed rounded text-start">
+                            <h6 class="text-emerald font-weight-600 mb-2"><i class="fa-solid fa-cloud-arrow-up me-2"></i> Update Priority Chart (Overwrite Mode)</h6>
+                            <form method="post" enctype="multipart/form-data" asp-page-handler="UploadServicesImage">
+                                <div class="input-group input-group-sm mb-2">
+                                    <input type="file" class="form-control" name="UploadedChart" accept=".png,.jpg,.jpeg" required />
+                                    <button class="btn btn-emerald text-white" type="submit">Upload & Replace</button>
+                                </div>
+                                <span class="text-muted font-size-12">Supports PNG/JPG. Replaces 'weekly-priorities-chart.png' and updates the public chart immediately.</span>
+                            </form>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

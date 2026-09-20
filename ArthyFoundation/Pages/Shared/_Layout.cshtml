@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Arthy Foundation | Save the Needy</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar text-white py-2 d-none d-lg-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span class="me-3"><i class="fa-solid fa-phone me-1 text-coral"></i> +91 88070 90107 / 7010186132</span>
+                <span><i class="fa-solid fa-envelope me-1 text-coral"></i> arthyfoundation@gmail.com</span>
+            </div>
+            <div class="text-italic">
+                "Supporting Needy - Shaping The Future"
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky-top shadow-sm bg-white">
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-left" asp-area="" asp-page="/Index">
+                    <img src="~/images/logo1.png" alt="Arthy Foundation Logo" class="brand-logo me-2" onerror="this.src='https://placehold.co/70x100/1e5e3a/ffffff?text=AF'" />
+                    @* <div>
+                        <span class="brand-title block text-emerald">ARTHY FOUNDATION</span>
+                        <small class="brand-subtitle block text-coral">Save the Needy</small>
+                    </div> *@
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end">
+                    <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-2 font-weight-500" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-2 font-weight-500" href="/Index#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-2 font-weight-500" href="/Index#causes">Our Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark mx-2 font-weight-500" asp-area="" asp-page="/Contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary rounded-circle ms-2" data-bs-toggle="modal" data-bs-target="#adminLoginModal" title="Admin Portal">
+                                <i class="fa-solid fa-lock"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="footer bg-dark-grey text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <h4 class="text-coral playfair">ARTHY FOUNDATION</h4>
+                        <p class="small text-light-gray mt-2">Uplifting underprivileged and marginalized sections of society through direct grassroots intervention, transparent resource sharing, and community care.</p>
+                    </div>
+                    <div class="footer-motto p-3 rounded bg-coral-transparent-10">
+                        <p class="mb-0 text-coral font-italic text-center">"Your Kindness Is Their Hope"</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white border-bottom border-accent pb-2 mb-3 font-weight-600">Our Core Focus Areas</h5>
+                    <ul class="list-unstyled footer-links text-light-gray">
+                        <li class="mb-2"><i class="fa-solid fa-chevron-right me-2 text-coral"></i>Child Care & Education</li>
+                        <li class="mb-2"><i class="fa-solid fa-chevron-right me-2 text-coral"></i>Elderly Support & Medicals</li>
+                        <li class="mb-2"><i class="fa-solid fa-chevron-right me-2 text-coral"></i>Differently-Abled Welfare</li>
+                        <li class="mb-2"><i class="fa-solid fa-chevron-right me-2 text-coral"></i>Tribal Community Upliftment</li>
+                        <li class="mb-2"><i class="fa-solid fa-chevron-right me-2 text-coral"></i>Single Parents' Children Support</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-5 col-md-12">
+                    <h5 class="text-white border-bottom border-accent pb-2 mb-3 font-weight-600">Registered Office Address</h5>
+                    <ul class="list-unstyled text-light-gray mb-0">
+                        <li class="mb-3 d-flex align-items-start">
+                            <i class="fa-solid fa-location-dot mt-1 me-3 text-coral fs-5"></i>
+                            <span>
+                                24, 13th Street, CTO Colony,<br />
+                                Lakshmipuram Extension, West Tambaram,<br />
+                                Chennai, Tamil Nadu - 600045.
+                            </span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fa-solid fa-phone me-3 text-coral fs-5"></i>
+                            <span>+91 88070 90107 | 7010186132</span>
+                        </li>
+                        <li class="mb-2 d-flex align-items-center">
+                            <i class="fa-solid fa-envelope me-3 text-coral fs-5"></i>
+                            <span>arthyfoundation@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-secondary mt-5" />
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small text-light-gray">&copy; @DateTime.Now.Year Arthy Foundation. All Rights Reserved. (Save the Needy)</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-light-gray text-decoration-none small me-3">Privacy Policy</a>
+                    <a href="#" class="text-light-gray text-decoration-none small">Refund Guidelines</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div class="modal fade" id="adminLoginModal" tabindex="-1" aria-labelledby="adminLoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark-green text-white">
+                    <h5 class="modal-title" id="adminLoginModalLabel"><i class="fa-solid fa-shield-halved me-2 text-accent"></i> Administrator Portal Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" asp-page="/Index" asp-page-handler="AdminLogin">
+                    <div class="modal-body">
+                        <p class="text-muted small">Access dashboard settings to upload the weekly priorities chart and manage transaction transparency tracking.</p>
+                        <div class="mb-3">
+                            <label for="adminUser" class="form-label font-weight-500">Username</label>
+                            <input type="text" class="form-control" id="adminUser" name="AdminUsername" required placeholder="admin" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPass" class="form-label font-weight-500">Password</label>
+                            <input type="password" class="form-control" id="adminPass" name="AdminPassword" required placeholder="••••••••" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-emerald text-white">Authenticate</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

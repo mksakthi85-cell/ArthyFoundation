@@ -1,0 +1,268 @@
+﻿@page
+@model ArthyFoundation.Pages.NeedsModel
+@{
+    ViewData["Title"] = "Essential Need Services - Arthy Foundation";
+}
+
+<!-- Header Banner -->
+<section class="section-padding bg-dark-grey">
+    <div class="container text-center py-4">
+        <span class="badge bg-coral text-white px-3 py-2 rounded-pill mb-3 tracking-widest text-uppercase">Always-On Support Services</span>
+        <h1 class="display-5 playfair font-weight-700 text-white mb-3">Fulfill Essential Needs & Transform Lives</h1>
+        <p class="body-text text-white max-w-700 mx-auto">Explore our default service categories below. Select the exact item or support program you wish to sponsor for children, elders, differently-abled individuals, and tribal families.</p>
+        <a href="/Index" class="btn btn-outline-white rounded-pill px-4 py-2 mt-2 hover-up font-size-14"><i class="fa-solid fa-arrow-left me-2"></i> Back to Homepage</a>
+    </div>
+</section>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="container mt-4">
+        <div class="alert alert-success alert-dismissible fade show shadow border-0 p-4" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-circle-check fs-4 text-success me-3"></i>
+                <div>
+                    <h5 class="alert-heading font-weight-600 mb-1">Sponsorship Logged Successfully!</h5>
+                    <p class="mb-0 text-secondary">@TempData["SuccessMessage"]</p>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+<section class="section-padding bg-white">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Category 1: Supporting Child Care -->
+            <div class="col-lg-6 col-md-12 cause-card" id="ChildCare">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/shiksha-education.jpg" class="card-img-top" style="height: 260px; object-fit: cover;" alt="Child Care Support" onerror="this.src='https://placehold.co/600x300/1e5e3a/ffffff?text=Child+Care+Support'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Child Care</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="card-title playfair font-weight-700 text-dark-green mb-2">Supporting Child Care</h3>
+                            <h6 class="text-coral font-weight-600 mb-2 font-italic">“We Provide School Supplies And Learning Support To Underprivileged Children.”</h6>
+                            <p class="card-text text-muted font-size-14 mb-4">(Empowering Them To Learn, Dream, And Build Brighter Futures.)</p>
+                        </div>
+
+                        <form method="post" asp-page-handler="SponsorNeed" class="bg-light p-4 rounded-lg">
+                            <input type="hidden" name="SelectedCategory" value="Supporting Child Care" />
+                            <div class="mb-3">
+                                <label class="form-label font-weight-600 text-emerald font-size-14"><i class="fa-solid fa-list-check me-2"></i> Select Support Item</label>
+                                <select class="form-select border-0 shadow-sm font-size-14" name="SelectedItem" required>
+                                    <option value="" selected disabled>-- Select Child Care Service --</option>
+                                    <option value="EduKit (Bag, Notebook, water bottle, Geomentry box, pencil box)">EduKit (Bag, Notebook, water bottle, Geomentry box, pencil box)</option>
+                                    <option value="Uniforms">Uniforms</option>
+                                    <option value="Slipper or Shoe">Slipper or Shoe</option>
+                                    <option value="Bicycle">Bicycle</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-sm border-0 shadow-sm" name="DonorName" placeholder="Your Full Name" required />
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control form-control-sm border-0 shadow-sm" name="DonorEmail" placeholder="Your Email Address" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                                <i class="fa-solid fa-heart me-2"></i> Sponsor This Child Care Need
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Community Food Donation Program -->
+            <div class="col-lg-6 col-md-12 cause-card" id="FoodDonation">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/aahar-hunger.jpg" class="card-img-top" style="height: 260px; object-fit: cover;" alt="Food Donation Program" onerror="this.src='https://placehold.co/600x300/e63946/ffffff?text=Food+Donation+Program'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Food Relief</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="card-title playfair font-weight-700 text-dark-green mb-2">Community Food Donation Program</h3>
+                            <h6 class="text-coral font-weight-600 mb-2 font-italic">“Our Food Donation Program Reaches Children, Elders, And Families In Need.”</h6>
+                            <p class="card-text text-muted font-size-14 mb-4">(We Serve Wholesome Meals That Bring Strength To The Body And Comfort To The Heart. Because No One Should Sleep Hungry.)</p>
+                        </div>
+
+                        <form method="post" asp-page-handler="SponsorNeed" class="bg-light p-4 rounded-lg">
+                            <input type="hidden" name="SelectedCategory" value="Community Food Donation Program" />
+                            <div class="mb-3">
+                                <label class="form-label font-weight-600 text-emerald font-size-14"><i class="fa-solid fa-utensils me-2"></i> Select Meal Service</label>
+                                <select class="form-select border-0 shadow-sm font-size-14" name="SelectedItem" required>
+                                    <option value="" selected disabled>-- Select Meal Support Option --</option>
+                                    <option value="Everday evening nuitrition">Everday evening nuitrition</option>
+                                    <option value="Special day meals">Special day meals</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-sm border-0 shadow-sm" name="DonorName" placeholder="Your Full Name" required />
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control form-control-sm border-0 shadow-sm" name="DonorEmail" placeholder="Your Email Address" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                                <i class="fa-solid fa-bowl-food me-2"></i> Sponsor Food Support
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: Supporting Elderly & Single Parent Families -->
+            <div class="col-lg-6 col-md-12 cause-card" id="ElderlyCare">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/emergency-aid.jpg" class="card-img-top" style="height: 260px; object-fit: cover;" alt="Elderly and Single Parent Care" onerror="this.src='https://placehold.co/600x300/1e5e3a/ffffff?text=Elderly+%26+Single+Parent+Care'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Elderly & Family Support</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="card-title playfair font-weight-700 text-dark-green mb-2">Supporting Elderly & Single Parent Families</h3>
+                            <h6 class="text-coral font-weight-600 mb-2 font-italic">“We Extend Grocery Support, Financial Aid, And Medical Care To Vulnerable Families.”</h6>
+                            <p class="card-text text-muted font-size-14 mb-4">(Bringing Them Hope, Dignity, And A Chance For A Better Tomorrow.)</p>
+                        </div>
+
+                        <form method="post" asp-page-handler="SponsorNeed" class="bg-light p-4 rounded-lg">
+                            <input type="hidden" name="SelectedCategory" value="Supporting Elderly & Single Parent Families" />
+                            <div class="mb-3">
+                                <label class="form-label font-weight-600 text-emerald font-size-14"><i class="fa-solid fa-hands-holding-child me-2"></i> Select Support Service</label>
+                                <select class="form-select border-0 shadow-sm font-size-14" name="SelectedItem" required>
+                                    <option value="" selected disabled>-- Select Elderly / Family Support --</option>
+                                    <option value="Grocery Support">Grocery Support</option>
+                                    <option value="Financial Aid">Financial Aid</option>
+                                    <option value="Medical Support">Medical Support</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-sm border-0 shadow-sm" name="DonorName" placeholder="Your Full Name" required />
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control form-control-sm border-0 shadow-sm" name="DonorEmail" placeholder="Your Email Address" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                                <i class="fa-solid fa-hand-holding-heart me-2"></i> Sponsor Elderly & Family Need
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4: Welfare For Differently Abled Individuals -->
+            <div class="col-lg-6 col-md-12 cause-card" id="DifferentlyAbled">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="position-relative">
+                        <img src="~/images/jeevitha-community.jpg" class="card-img-top" style="height: 260px; object-fit: cover;" alt="Differently Abled Support" onerror="this.src='https://placehold.co/600x300/f4a261/ffffff?text=Differently+Abled+Support'" />
+                        <span class="badge bg-emerald text-white position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">Differently Abled</span>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="card-title playfair font-weight-700 text-dark-green mb-2">Welfare For Differently Abled Individuals</h3>
+                            <h6 class="text-coral font-weight-600 mb-2 font-italic">“Delivering Essential Support Wheelchairs, Walking Sticks, Groceries, And Medical Support.”</h6>
+                            <p class="card-text text-muted font-size-14 mb-4">(Empowering Differently-abled Individuals With Strength, Independence, And Hope.)</p>
+                        </div>
+
+                        <form method="post" asp-page-handler="SponsorNeed" class="bg-light p-4 rounded-lg">
+                            <input type="hidden" name="SelectedCategory" value="Welfare For Differently Abled Individuals" />
+                            <div class="mb-3">
+                                <label class="form-label font-weight-600 text-emerald font-size-14"><i class="fa-solid fa-wheelchair me-2"></i> Select Assistive Support</label>
+                                <select class="form-select border-0 shadow-sm font-size-14" name="SelectedItem" required>
+                                    <option value="" selected disabled>-- Select Differently Abled Service --</option>
+                                    <option value="Wheelchairs">Wheelchairs</option>
+                                    <option value="Walking Sticks">Walking Sticks</option>
+                                    <option value="Grocery Support">Grocery Support</option>
+                                    <option value="Medical Support">Medical Support</option>
+                                    <option value="Essential Support">Essential Support</option>
+                                </select>
+                            </div>
+                            <div class="row g-2 mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control form-control-sm border-0 shadow-sm" name="DonorName" placeholder="Your Full Name" required />
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control form-control-sm border-0 shadow-sm" name="DonorEmail" placeholder="Your Email Address" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                                <i class="fa-solid fa-wheelchair me-2"></i> Sponsor Differently Abled Need
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Community Development Program -->
+            <div class="col-lg-12 cause-card" id="CommunityDevelopment">
+                <div class="card h-100 border-0 shadow-sm hover-shadow transition-all overflow-hidden rounded-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-5 position-relative">
+                            <img src="~/images/sahaara-shelter.jpg" class="img-fluid h-100 w-100" style="object-fit: cover; min-height: 320px;" alt="Community Development Program" onerror="this.src='https://placehold.co/600x400/1e5e3a/ffffff?text=Community+Development+Program'" />
+                            <span class="badge bg-emerald text-white position-absolute top-0 start-0 m-3 rounded-pill px-3 py-2">Community Development</span>
+                        </div>
+                        <div class="col-lg-7 p-4 p-lg-5 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="card-title playfair font-weight-700 text-dark-green mb-2">Community Development Program</h3>
+                                <h6 class="text-coral font-weight-600 mb-2 font-italic">“Through Our Community Development Program, We Provide Rice Support, Tarpaulins, And Other Essential Aid To The Most Deserving Families.”</h6>
+                                <p class="card-text text-muted font-size-14 mb-4">(Transforming Villages, Building Resilience, And Creating Sustainable Progress For Tribal & Vulnerable Communities.)</p>
+                            </div>
+
+                            <form method="post" asp-page-handler="SponsorNeed" class="bg-light p-4 rounded-lg">
+                                <input type="hidden" name="SelectedCategory" value="Community Development Program" />
+                                <div class="mb-3">
+                                    <label class="form-label font-weight-600 text-emerald font-size-14"><i class="fa-solid fa-people-roof me-2"></i> Select Community Service Option</label>
+                                    <select class="form-select border-0 shadow-sm font-size-14" name="SelectedItem" required>
+                                        <option value="" selected disabled>-- Select Community Reforming Service --</option>
+                                        <option value="Rice and Grocery Support">Rice and Grocery Support</option>
+                                        <option value="Tarpaulins">Tarpaulins</option>
+                                        <option value="Mat and bedsheet">Mat and bedsheet</option>
+                                        <option value="Hut renovation">Hut renovation</option>
+                                        <option value="Personality development classes for tribal school children">Personality development classes for tribal school children</option>
+                                        <option value="Dress support">Dress support</option>
+                                        <option value="Solar light support">Solar light support</option>
+                                        <option value="Vessels support">Vessels support</option>
+                                    </select>
+                                </div>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-sm border-0 shadow-sm" name="DonorName" placeholder="Your Full Name" required />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control form-control-sm border-0 shadow-sm" name="DonorEmail" placeholder="Your Email Address" required />
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-2.5 font-weight-600 hover-up">
+                                    <i class="fa-solid fa-house-chimney-window me-2"></i> Sponsor Community Reforming Program
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetCause = urlParams.get('cause');
+            if (targetCause) {
+                const targetElement = document.getElementById(targetCause);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetElement.classList.add('border', 'border-2', 'border-coral', 'shadow-lg');
+                }
+            }
+        });
+    </script>
+}

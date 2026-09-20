@@ -1,0 +1,163 @@
+﻿@page
+@model ArthyFoundation.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Us - Arthy Foundation";
+}
+
+<section class="section-padding bg-dark-grey">
+    <div class="container text-center py-4">
+        <span class="badge bg-coral text-white px-3 py-2 rounded-pill mb-3 tracking-widest text-uppercase">Get in Touch</span>
+        <h1 class="display-5 playfair font-weight-700 text-coral mb-3">Reach Our Field Office</h1>
+        <p class="body-text text-white max-w-700 mx-auto">Have questions about donation transparency, volunteering, or outreach activities? Reach out to us through any channel below or submit an inquiry directly.</p>
+        <a href="/Index" class="btn btn-outline-white rounded-pill px-4 py-2 mt-2 hover-up font-size-14"><i class="fa-solid fa-house me-2"></i> Back to Homepage</a>
+    </div>
+</section>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="container mt-4">
+        <div class="alert alert-success alert-dismissible fade show shadow border-0 p-4" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="fa-solid fa-circle-check fs-4 text-success me-3"></i>
+                <div>
+                    <h5 class="alert-heading font-weight-600 mb-1">Inquiry Submitted Successfully!</h5>
+                    <p class="mb-0 text-secondary">@TempData["SuccessMessage"]</p>
+                </div>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+}
+
+<section class="section-padding bg-white">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Column: Official Contact details & Social Badges -->
+            <div class="col-lg-5">
+                <h3 class="playfair font-weight-700 text-coral mb-4">Official Channels</h3>
+
+                <!-- Registered Office Card -->
+                <div class="card border-0 bg-light p-4 rounded-lg mb-4 hover-shadow transition-all">
+                    <div class="d-flex align-items-start">
+                        <div class="bg-coral-light text-coral rounded-circle p-3 me-3">
+                            <i class="fa-solid fa-location-dot fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-weight-600 text-coral mb-2">Office Address</h5>
+                            <p class="text-secondary mb-3 leading-relaxed">
+                                24, 13th Street, CTO Colony,<br />
+                                Lakshmipuram Extension, West Tambaram,<br />
+                                Chennai, Tamil Nadu - 600045.
+                            </p>
+                            <a href="https://maps.app.goo.gl/NS82CC7kCRK95rAR8" target="_blank" rel="noopener" class="btn btn-coral btn-sm text-white rounded-pill px-3 py-2">
+                                <i class="fa-solid fa-map-location-dot me-1"></i> Open Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call and WhatsApp Support -->
+                <div class="card border-0 bg-light p-4 rounded-lg mb-4 hover-shadow transition-all">
+                    <div class="d-flex align-items-start">
+                        <div class="bg-coral-light text-coral rounded-circle p-3 me-3">
+                            <i class="fa-solid fa-phone-volume fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="font-weight-600 text-coral mb-2">Helpline Contacts</h5>
+                            <p class="text-secondary mb-1"><strong>Reach Us:</strong> +91 88070 90107 / +91 70101 86132</p>
+                            @* <p class="text-secondary mb-3"><strong>Secondary Call / WA:</strong> +91 70101 86132</p> *@
+                            <a href="https://wa.me/918807090107" target="_blank" rel="noopener" class="btn btn-coral btn-sm rounded-pill px-3 py-2 text-white">
+                                <i class="fa-brands fa-whatsapp me-1"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Portals Grid -->
+                <div class="card border-0 bg-light p-4 rounded-lg hover-shadow transition-all">
+                    <h5 class="font-weight-600 text-coral mb-3"><i class="fa-solid fa-share-nodes me-2 text-coral"></i>Official Social Portals</h5>
+                    <p class="text-muted font-size-14 mb-4">Follow our transparent field drives, distribution vlogs, and media coverage across our official handles.</p>
+
+                     <div class="d-flex flex-column gap-3">
+                        <!-- Youtube -->
+                        <a href="https://www.youtube.com/@@Arthyfoundation" target="_blank" rel="noopener" class="social-link-item d-flex align-items-center p-2 rounded bg-white text-decoration-none transition-all hover-up">
+                            <div class="bg-coral-light text-coral rounded p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <i class="fa-brands fa-youtube fs-5"></i>
+                            </div>
+                            <div>
+                                <span class="block font-weight-600 text-dark">YouTube Portal</span>
+                                <small class="block text-muted">Arthyfoundation</small>
+                            </div>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=61569282555042" target="_blank" rel="noopener" class="social-link-item d-flex align-items-center p-2 rounded bg-white text-decoration-none transition-all hover-up">
+                            <div class="bg-primary-light text-primary rounded p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background-color: #E8F0FE;">
+                                <i class="fa-brands fa-facebook-f fs-5" style="color: #1877F2;"></i>
+                            </div>
+                            <div>
+                                <span class="block font-weight-600 text-dark">Facebook Page</span>
+                                <small class="block text-muted">Arthy Foundation</small>
+                            </div>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/ARTHYFOUNDATION" target="_blank" rel="noopener" class="social-link-item d-flex align-items-center p-2 rounded bg-white text-decoration-none transition-all hover-up">
+                            <div class="rounded p-2 me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white;">
+                                <i class="fa-brands fa-instagram fs-5"></i>
+                            </div>
+                            <div>
+                                <span class="block font-weight-600 text-dark">Instagram Feed</span>
+                                <small class="block text-muted">ARTHYFOUNDATION</small>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Database Message Form -->
+            <div class="col-lg-7">
+                <div class="card border-0 shadow p-5 rounded-lg bg-coral-light border-top border-coral border-5">
+                    <h3 class="playfair font-weight-700 text-coral mb-2">Send an Inquiry</h3>
+                    <p class="text-secondary mb-4">Fill out the official form below. Your message will be instantly processed and logged directly into our West Tambaram administration database desk.</p>
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label font-weight-500 text-coral">Your Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control border-0 p-3 rounded shadow-sm" asp-for="ContactName" placeholder="John Doe" required />
+                                <span asp-validation-for="ContactName" class="text-danger font-size-12"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label font-weight-500 text-coral">Phone Number</label>
+                                <input type="tel" class="form-control border-0 p-3 rounded shadow-sm" asp-for="ContactPhone" placeholder="+91 98765 43210" />
+                                <span asp-validation-for="ContactPhone" class="text-danger font-size-12"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label font-weight-500 text-coral">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control border-0 p-3 rounded shadow-sm" asp-for="ContactEmail" placeholder="yourname@example.com" required />
+                                <span asp-validation-for="ContactEmail" class="text-danger font-size-12"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label font-weight-500 text-coral">Message / Inquiry Details <span class="text-danger">*</span></label>
+                                <textarea class="form-control border-0 p-3 rounded shadow-sm" asp-for="ContactMessage" rows="5" placeholder="Let us know how you want to support or check our dynamic campaigns..." required></textarea>
+                                <span asp-validation-for="ContactMessage" class="text-danger font-size-12"></span>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-coral text-white w-100 rounded-pill py-3 hover-up shadow-sm fs-5">
+                                    <i class="fa-solid fa-paper-plane me-2"></i> Submit Inquiry Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
